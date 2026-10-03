@@ -5,6 +5,9 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Domain kustom di root, jadi base '/' . Kalau nanti di-hosting di subpath,
+  // set BASE_PATH saat build, contoh: BASE_PATH=/ar-geometry/ npm run build
+  base: process.env.BASE_PATH || '/',
   plugins: [react(), tailwindcss(), basicSsl()],
   server: {
     host: true,
